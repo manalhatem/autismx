@@ -18,9 +18,9 @@ class CreateCentersTable extends Migration
             $table->string('centerName');
             $table->string('phone');
             $table->string('email');
+            $table->string('password');
             $table->string('address');
-            $table->integer('photo_id')->unsigned();
-            $table->foreign('photo_id')->references('id')->on('center_photos');
+
         });
     }
 

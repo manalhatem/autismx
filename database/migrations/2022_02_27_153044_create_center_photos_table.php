@@ -15,7 +15,9 @@ class CreateCenterPhotosTable extends Migration
     {
         Schema::create('center_photos', function (Blueprint $table) {
             $table->increments('id');
-            $table->binary('image');
+            $table->string('image');
+            $table->integer('center_id')->unsigned();
+            $table->foreign('center_id')->references('id')->on('centers')->onDelete('cascade');
         });
     }
 

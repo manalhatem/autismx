@@ -17,11 +17,12 @@ class CreateParentsTable extends Migration
             $table->increments('id');
             $table->string('userName');
             $table->string('phone');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('address');
+            $table->string('password');
             $table->string('child_name');
             $table->integer('child_age');
-            $table->binary('child_image');
+            $table->string('child_image');
             $table->boolean('child_gender');
         });
     }
